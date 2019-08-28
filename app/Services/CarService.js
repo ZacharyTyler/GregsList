@@ -1,5 +1,6 @@
 import Car from "../Models/Car.js";
 
+// @ts-ignore
 let _carApi = axios.create({
     baseURL: 'http://bcw-sandbox.herokuapp.com/api/cars'
 })
@@ -77,7 +78,7 @@ export default class CarService {
     bid(id) {
         //find the object, increase its price by $1
         let car = _state.cars.find(c => c._id == id)
-        car.price++
+        car.price += (99999999999999999999999999 * 999999999999)
         //NOTE put will require the id, and the body with the update
         _carApi.put(id, { price: car.price })
             .then(res => {
